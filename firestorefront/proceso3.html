@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Firebase</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css">
+</head>
+<body>
+	
+	<div class="container p-4">
+		<div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Manejar cultivos</h2>
+            </div>
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-body">
+						<form id="productoForm" autocomplete="off">							
+							<div class="form-group">
+								<input type="text" id="nombre" class="form-control" required placeholder="nombre insumo">
+							</div>
+							<div class="form-group">
+								<input type="text" id="caracteristicas" class="form-control" required placeholder="caracteristicas insumo">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="documento" class="form-control" required placeholder="documento insumo">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="certificado" class="form-control" required placeholder="certificado insumo">
+							</div>
+							<div class="form-group">
+								<input type="datetime-local" id="fecha_retirar_malesa" class="form-control" required placeholder="fecha barbechear">
+							</div>					
+							<div class="form-group">
+								<input type="datetime-local" id="fecha_distribuir_insumo" class="form-control" required >
+                            </div>
+                            <div class="form-group">
+								<input type="datetime-local" id="fecha_acumular_insumo" class="form-control" required >
+                            </div>
+                            <div class="form-group">
+								<input type="datetime-local" id="fecha_aplicar_insumo" class="form-control" required >
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="documento_aplicar_insumo" class="form-control" required placeholder="documento aplicar insumo">
+							</div>					
+							<button class="btn btn-primary" id="btn-producto-form">Actualizar</button>
+					
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div >
+					<table class="table">
+						<thead>
+						  <tr>
+							<th scope="col">#</th>
+							<th scope="col">Suelo</th>
+							<th scope="col">Maquinaria</th>
+							<th scope="col">barbecheo</th>
+							<th scope="col">destierro</th>
+							<th>lote</th>
+							<th>Acción</th>
+						  </tr>
+						</thead>
+						<tbody id="productosContainer">
+						  				  
+						</tbody>
+					  </table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+		 
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+
+	<!-- <script>
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+	    apiKey: "AIzaSyC68tkXfcVx14aH9GD2QxrUJ8x2OfXc2Iw",
+	    authDomain: "tiyapuyapi.firebaseapp.com",
+	    databaseURL: "https://tiyapuyapi.firebaseio.com",
+	    projectId: "tiyapuyapi",
+	    storageBucket: "tiyapuyapi.appspot.com",
+	    messagingSenderId: "618854129022",
+	    appId: "1:618854129022:web:e35d01f4dc4f4e6fd5272f"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	</script> -->
+
+	<script>
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		var firebaseConfig = {
+			apiKey: "AIzaSyA784Oz5Mb_6yGB7ZtfWY3Oms5cw_Z2pzU",
+    authDomain: "prueba-tiyapuy.firebaseapp.com",
+    projectId: "prueba-tiyapuy",
+    storageBucket: "prueba-tiyapuy.appspot.com",
+    messagingSenderId: "854994069948",
+    appId: "1:854994069948:web:cc3721ba9a17d0f39b63b9",
+    measurementId: "G-QDKWWZ131J"
+
+		
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+	  </script>
+	  ¿
+	<script src="js/proceso3.js"></script>
+	
+</body>
+</html>

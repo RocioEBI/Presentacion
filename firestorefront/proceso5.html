@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Firebase</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css">
+</head>
+<body>
+	
+	<div class="container p-4">
+		<div class="row">
+            <div class="col-md-12 text-center">
+                <h2>5. Acopiar y procesar</h2>
+            </div>
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-body">
+						<form id="productoForm" autocomplete="off">							
+							<div class="form-group">
+								<input type="text" id="nombre" class="form-control" required placeholder="nombre medio transporte">
+							</div>
+							<div class="form-group">
+								<input type="text" id="medio_transporte" class="form-control" required placeholder="medio transporte">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="ID" class="form-control" required placeholder="ID transporte">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">recepcionar_mp</label>
+								<input type="datetime-local" id="recepcionar_mp" class="form-control" required >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">clasificar_mp</label>
+								<input type="datetime-local" id="fecha_clasificar_mp" class="form-control" required >
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="resultado_mp" class="form-control" required placeholder="resultado materia prima">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="descarte_mp" class="form-control" required placeholder="descarte materia prima">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="resultado_semilla" class="form-control" required placeholder="resultado semilla">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="descarte_semilla" class="form-control" required placeholder="descarte semilla">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">almacenar_mp</label>
+								<input type="datetime-local" id="fecha_almacenar_mp" class="form-control" required >
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="ubicacion_mp" class="form-control" required placeholder="Ubicacion de almacen mp">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="caracteristicas_almacen_mp" class="form-control" required placeholder="caracteristicas almacen materia prima">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">almacenar_semilla</label>
+								<input type="datetime-local" id="fecha_almacenar_semilla" class="form-control" required >
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="ubicacion_semilla" class="form-control" required placeholder="Ubicacion de almacen mp">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="caracteristicas_almacen_semilla" class="form-control" required placeholder="caracteristicas almacen materia prima">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">lavar_mp</label>
+								<input type="datetime-local" id="fecha_lavar_mp" class="form-control" required >
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="origen_agua" class="form-control" required placeholder="origen del agua">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">ensacar_mp</label>
+								<input type="datetime-local" id="fecha_ensacar_mp" class="form-control" required >
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="tipo_malla" class="form-control" required placeholder="tipo de malla">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">almacenar_mp_preparada</label>
+								<input type="datetime-local" id="fecha_almacenar_mp_preparada" class="form-control" required >
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="ubicacion_mp_preparada" class="form-control" required placeholder="Ubicacion de almacen mp preparada">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="caracteristicas_almacen_mp_preparada" class="form-control" required placeholder="caracteristicas almacen materia prima preparada">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">transporte_mp_preparada</label>
+								<input type="datetime-local" id="fecha_transporte_mp_preparada" class="form-control" required >
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="transportista" class="form-control" required placeholder="Transportista">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="condicionamiento_transporte" class="form-control" required placeholder="condicionemiento del transporte">
+                            </div>
+                           		
+							<button class="btn btn-primary" id="btn-producto-form">Actualizar</button>					
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div >
+					<table class="table">
+						<thead>
+						  <tr>
+							<th scope="col">#</th>
+							<th scope="col">Suelo</th>
+							<th scope="col">Maquinaria</th>
+							<th scope="col">barbecheo</th>
+							<th scope="col">destierro</th>
+							<th>lote</th>
+							<th>Acción</th>
+						  </tr>
+						</thead>
+						<tbody id="productosContainer">
+						  				  
+						</tbody>
+					  </table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+		 
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+
+	 <script>
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+	    apiKey: "AIzaSyA784Oz5Mb_6yGB7ZtfWY3Oms5cw_Z2pzU",
+    authDomain: "prueba-tiyapuy.firebaseapp.com",
+    projectId: "prueba-tiyapuy",
+    storageBucket: "prueba-tiyapuy.appspot.com",
+    messagingSenderId: "854994069948",
+    appId: "1:854994069948:web:cc3721ba9a17d0f39b63b9",
+    measurementId: "G-QDKWWZ131J"
+
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	</script> 
+
+	
+	<script src="js/proceso5.js"></script>
+	
+</body>
+</html>

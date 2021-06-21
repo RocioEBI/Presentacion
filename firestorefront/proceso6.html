@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Firebase</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css">
+</head>
+<body>
+	
+	<div class="container p-4">
+		<div class="row">
+            <div class="col-md-12 text-center">
+                <h2>6. Producir</h2>
+            </div>
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-bod                                                                                                                                y">
+						<form id="productoForm" autocomplete="off">							
+							<div class="form-group">
+                                <label for="">Controlar calidad ingreso</label>
+								<input type="datetime-local" id="fecha_controlar_calidad_ingreso" class="form-control" >
+							</div>ok
+							<div class="form-group">
+								<input type="text" id="control_calidad_ingreso" class="form-control"  placeholder="doc. control calidad">
+                            </div>ok
+
+                            <div class="form-group">
+                                <label for="">almacenar_mp_preparada</label>
+								<input type="datetime-local" id="fecha_almacenar_mp_preparada" class="form-control"  >
+                            </div>ok
+                            <div class="form-group">
+								<input type="text" id="ubicacion_mp_preparada" class="form-control"  placeholder="Ubicacion de almacen mp preparada">
+                            </div>ok
+                            <div class="form-group">
+								<input type="text" id="fifo_fefo_almacenar_mp" class="form-control"  placeholder="FIFO/FEFO de almacenar mp">
+                            </div>ok
+                            <div class="form-group">
+								<input type="text" id="lote" class="form-control"  placeholder="Lote">
+                            </div>ok
+                            <div class="form-group">
+								<input type="text" id="peso" class="form-control"  placeholder="Peso">
+                            </div>ok
+
+                            <div class="form-group">
+								<input type="text" id="nombre_maquinaria" class="form-control"  placeholder="nombre maquina">
+							</div>
+							<div class="form-group">
+								<input type="text" id="ID_maquinaria" class="form-control"  placeholder="ID maquinaria">
+							</div>
+
+                            <div class="form-group">
+								<input type="text" id="nombre_insumo" class="form-control"  placeholder="nombre insumo">
+							</div>
+							<div class="form-group">
+								<input type="text" id="caracteristicas" class="form-control"  placeholder="caracteristicas insumo">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="documento" class="form-control"  placeholder="documento insumo">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="certificado" class="form-control"  placeholder="certificado insumo">
+							</div>
+
+                            <div class="form-group">
+								<input type="text" id="calidad_empaque" class="form-control"  placeholder="calidad del empaque">
+							</div>
+							<div class="form-group">
+								<input type="text" id="hermeticidad" class="form-control"  placeholder="Hermeticidad">
+							</div>
+
+                            <div class="form-group">
+								<input type="text" id="calidad_caja" class="form-control"  placeholder="calidad de la caja">
+							</div>
+
+                            <div class="form-group">
+                                <label for="">fecha controlar calidad salida</label>
+								<input type="datetime-local" id="fecha_controlar_calidad_salida" class="form-control" >
+							</div>
+							<div class="form-group">
+								<input type="text" id="control_calidad_salida" class="form-control"  placeholder="documento control de calidad salida">
+							</div>
+
+                            <div class="form-group">
+                                <label for="">fecha lavar, rebanar, pelar mp</label>
+								<input type="datetime-local" id="fecha_lav_reb_pel_mp" class="form-control" >
+							</div>
+							<div class="form-group">
+								<input type="text" id="espesor_hojuela_cruda" class="form-control"  placeholder="espesor hojuela cruda">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="">fecha freir mp</label>
+								<input type="datetime-local" id="fecha_freir_mp" class="form-control" >
+							</div>
+							<div class="form-group">
+								<input type="text" id="rendimiento_mp" class="form-control"  placeholder="rendimiento mp">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="temperatura" class="form-control"  placeholder="temperatura">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="calidad_aceite" class="form-control"  placeholder="calidad del aceite">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="control_organoleptico" class="form-control"  placeholder="control organoleptico">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Adicionar sal a la ojuela</label>
+								<input type="datetime-local" id="fecha_adic_sal_hojue" class="form-control" >
+							</div>
+							<div class="form-group">
+								<input type="text" id="porc_sal_hojuela" class="form-control"  placeholder="porcentaje de sal en la hojuela">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="">empacar producto</label>
+								<input type="datetime-local" id="fecha_empacar_producto" class="form-control" >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="">preparar caja</label>
+								<input type="datetime-local" id="fecha_preparar_caja" class="form-control" >
+							</div>
+                            
+                            <div class="form-group">
+                                <label for="">almacenar producto</label>
+								<input type="datetime-local" id="fecha_almacenar_producto" class="form-control" >
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="ubicacion_almacen_producto" class="form-control"  placeholder="ubicacion almacen producto">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="fifo_fefo_almacenar_producto" class="form-control"  placeholder="FIFO/FEFO almacenar producto">
+                            </div>
+
+                            <div class="form-group">
+								<input type="text" id="medio_transporte" class="form-control"  placeholder="medio transporte">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="nombre_transporte" class="form-control"  placeholder="nombre transporte">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="ID_transporte" class="form-control"  placeholder="ID transporte">
+							</div>
+
+                            <div class="form-group">
+                                <label for="">transportar producto</label>
+								<input type="datetime-local" id="fecha_transportar_producto" class="form-control" >
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="transportista" class="form-control"  placeholder="transportista">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="condicion_higienica_transporte" class="form-control"  placeholder="condicion higiénica del transporte">
+                            </div>
+                            <div class="form-group">
+								<input type="text" id="nivel_servicio" class="form-control"  placeholder="Nivel de servicio">
+                            </div>
+                           		
+							<button class="btn btn-primary" id="btn-producto-form">Actualizar</button>					
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div >
+					<table class="table">
+						<thead>
+						  <tr>
+							<th scope="col">#</th>
+							<th scope="col">Suelo</th>
+							<th scope="col">Maquinaria</th>
+							<th scope="col">barbecheo</th>
+							<th scope="col">destierro</th>
+							<th>lote</th>
+							<th>Acción</th>
+						  </tr>
+						</thead>
+						<tbody id="productosContainer">
+						  				  
+						</tbody>
+					  </table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<!-- The core Firebase JS SDK is always  and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+		 
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+
+	 <script>
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+	    apiKey: "AIzaSyA784Oz5Mb_6yGB7ZtfWY3Oms5cw_Z2pzU",
+    authDomain: "prueba-tiyapuy.firebaseapp.com",
+    projectId: "prueba-tiyapuy",
+    storageBucket: "prueba-tiyapuy.appspot.com",
+    messagingSenderId: "854994069948",
+    appId: "1:854994069948:web:cc3721ba9a17d0f39b63b9",
+    measurementId: "G-QDKWWZ131J"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	</script> 
+
+	  
+
+	<script src="js/proceso6.js"></script>
+	
+</body>
+</html>
